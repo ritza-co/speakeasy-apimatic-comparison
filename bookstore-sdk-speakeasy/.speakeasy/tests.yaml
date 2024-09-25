@@ -1,0 +1,23 @@
+testsVersion: 0.0.1
+tests: # A map of operationId (these should match the operationId defined in the OpenAPI document) to a list of tests
+  getBookById:
+    - name: Test use case 1
+      security:
+        apiKey: "x-env: TEST_API_KEY"
+      parameters:
+        path:
+          id: 1
+      responses:
+        "200":
+            "application/json":
+                id: 1
+                title: Clean Code
+                description: A Handbook of Agile Software Craftsmanship
+                price: 2999
+                category: Programming
+                author:
+                  id: 1
+                  name: Robert C. Martin
+                  photo: https://example.com/photos/robert.jpg
+                  biography: Robert Cecil Martin, colloquially known as "Uncle Bob", is an American software engineer...
+                cover_image: https://example.com/covers/cleancode.jpg
